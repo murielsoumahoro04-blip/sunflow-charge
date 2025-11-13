@@ -21,11 +21,11 @@ const Index = () => {
               />
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#dashboard" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Dashboard
+              <a href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Accueil
               </a>
-              <a href="#stations" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                Bornes
+              <a href="/map" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                Carte
               </a>
               <a href="#history" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                 Historique
@@ -64,9 +64,11 @@ const Index = () => {
                   <Zap className="w-5 h-5 mr-2" />
                   Démarrer une recharge
                 </Button>
-                <Button size="lg" variant="outline">
-                  <MapPin className="w-5 h-5 mr-2" />
-                  Trouver une borne
+                <Button size="lg" variant="outline" asChild>
+                  <a href="/map">
+                    <MapPin className="w-5 h-5 mr-2" />
+                    Trouver une borne
+                  </a>
                 </Button>
               </div>
             </div>
@@ -175,9 +177,11 @@ const Index = () => {
               <h3 className="text-2xl font-bold text-foreground mb-2">Bornes à proximité</h3>
               <p className="text-muted-foreground">Trouvez la station de recharge idéale</p>
             </div>
-            <Button variant="outline">
-              <MapPin className="w-4 h-4 mr-2" />
-              Voir la carte
+            <Button variant="outline" asChild>
+              <a href="/map">
+                <MapPin className="w-4 h-4 mr-2" />
+                Voir la carte
+              </a>
             </Button>
           </div>
 
