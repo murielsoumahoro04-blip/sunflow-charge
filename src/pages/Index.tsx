@@ -4,6 +4,7 @@ import StatsCard from "@/components/StatsCard";
 import EnergyFlow from "@/components/EnergyFlow";
 import ChargingStation from "@/components/ChargingStation";
 import heroImage from "@/assets/hero-charging.jpg";
+import sunplugLogo from "@/assets/sunplug-logo.png";
 
 const Index = () => {
   return (
@@ -13,12 +14,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-energy p-2 rounded-xl">
-                <Zap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-energy bg-clip-text text-transparent">
-                SmartCharge Solar+
-              </h1>
+              <img 
+                src={sunplugLogo} 
+                alt="SUNPLUG Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#dashboard" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
@@ -50,9 +50,9 @@ const Index = () => {
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                Rechargez intelligent,
+                Laissez le soleil
                 <span className="block bg-gradient-energy bg-clip-text text-transparent">
-                  vivez durable
+                  recharger votre voiture
                 </span>
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -118,14 +118,14 @@ const Index = () => {
               unit="kWh"
               icon={Zap}
               trend="+8%"
-              gradient="bg-gradient-energy"
+              gradient="bg-primary"
             />
             <StatsCard
               title="Niveau de batterie"
               value="85"
               unit="%"
               icon={Battery}
-              gradient="bg-secondary"
+              gradient="bg-gradient-energy"
             />
             <StatsCard
               title="CO₂ évité"
@@ -133,7 +133,7 @@ const Index = () => {
               unit="kg"
               icon={Leaf}
               trend="+15%"
-              gradient="bg-accent"
+              gradient="bg-secondary"
             />
           </div>
 
@@ -246,10 +246,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-gradient-energy p-2 rounded-xl">
-                  <Zap className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <span className="font-bold text-lg text-foreground">SmartCharge Solar+</span>
+                <img 
+                  src={sunplugLogo} 
+                  alt="SUNPLUG" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-sm text-muted-foreground">
                 La solution intelligente pour une mobilité électrique durable et économique.
@@ -281,7 +282,7 @@ const Index = () => {
             </div>
           </div>
           <div className="pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
-            <p>© 2024 SmartCharge Solar+. Tous droits réservés. 🌱 Propulsé par l'énergie solaire.</p>
+            <p>© 2024 SUNPLUG. Tous droits réservés. 🌱 Propulsé par l'énergie solaire.</p>
           </div>
         </div>
       </footer>
