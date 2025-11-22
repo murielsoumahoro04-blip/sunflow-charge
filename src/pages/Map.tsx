@@ -244,17 +244,37 @@ const Map = () => {
           {/* Map */}
           <div className="lg:col-span-2">
             <Card className="p-6 h-[calc(100vh-12rem)] relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-muted via-card to-muted/50">
-                {/* Map Grid */}
-                <div className="absolute inset-0 opacity-10">
-                  <svg width="100%" height="100%">
+              <div className="absolute inset-0 bg-gradient-to-br from-muted/80 via-background/90 to-muted/80">
+                {/* Aerial Map Background - Streets Pattern */}
+                <div className="absolute inset-0 opacity-[0.15]">
+                  <svg width="100%" height="100%" className="text-muted-foreground">
                     <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary"/>
+                      {/* Street grid pattern */}
+                      <pattern id="streets" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <rect width="120" height="120" fill="transparent"/>
+                        <line x1="0" y1="0" x2="120" y2="0" stroke="currentColor" strokeWidth="2"/>
+                        <line x1="0" y1="0" x2="0" y2="120" stroke="currentColor" strokeWidth="2"/>
+                        <line x1="60" y1="0" x2="60" y2="120" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+                        <line x1="0" y1="60" x2="120" y2="60" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+                      </pattern>
+                      {/* Building blocks */}
+                      <pattern id="buildings" width="80" height="80" patternUnits="userSpaceOnUse">
+                        <rect x="5" y="5" width="30" height="30" fill="currentColor" opacity="0.3"/>
+                        <rect x="45" y="5" width="30" height="30" fill="currentColor" opacity="0.2"/>
+                        <rect x="5" y="45" width="30" height="30" fill="currentColor" opacity="0.25"/>
+                        <rect x="45" y="45" width="30" height="30" fill="currentColor" opacity="0.15"/>
                       </pattern>
                     </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    <rect width="100%" height="100%" fill="url(#streets)"/>
+                    <rect width="100%" height="100%" fill="url(#buildings)" opacity="0.4"/>
                   </svg>
+                </div>
+
+                {/* Green spaces simulation */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-[20%] left-[15%] w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-[30%] right-[25%] w-40 h-40 bg-secondary rounded-full blur-3xl"></div>
+                  <div className="absolute top-[60%] left-[40%] w-24 h-24 bg-secondary rounded-full blur-3xl"></div>
                 </div>
 
                 {/* Map Title Overlay */}
